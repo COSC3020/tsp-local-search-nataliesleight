@@ -50,3 +50,21 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+Time complexity: n + (n-2) + (n^3) (random chance + (n/2) + (n-1))
+n = make path array
+n-2 = randomize path array
+n^3 = for loop of n^3
+random chance = while loop for k > i
+n/2 = swap
+n-1 = calculate path
+
+### Sources:
+
+I used this link to find the pseudocode for my path randomize function: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+
+I used this link to find out how to round up: https://www.w3schools.com/jsref/jsref_ceil.asp
+
+I used this link to find out how to get randomized numbers in a specified range: https://www.w3schools.com/js/js_random.asp 
+
+“I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.” - Natalie Sleight
