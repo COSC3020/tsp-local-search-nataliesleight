@@ -52,6 +52,16 @@ is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
 Time complexity: n + (n-2) + (n^3) (random chance + (n/2) + (n-1))
+2n -2 + n^3(rand + n^2/2 - n/2)
+2n - 2 + n^3rand + n^5/2 - n^4/2
+n^5/2 - n^4/2 + n^3rand + 2n - 2
+
+The time complexity is $T(n) ∈ (\frac{n^5}{2}$. 
+
+The main function starts off by building an array of the nodes in the graph. This takes n time. It then calls on a function that randomizes the order of the array which takes n - 2 time (for loop runs from 0 to n-2). 
+
+After that a for loop is entered. This for loop runs n^3 times. This is an arbitrary value that I have selected and will be how many times 
+
 n = make path array
 n-2 = randomize path array
 n^3 = for loop of n^3
