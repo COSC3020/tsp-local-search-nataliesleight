@@ -69,16 +69,9 @@ Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-
 
 ### Memory Complexity 
 
-n for array
-constant vars: shortPath, n, itNum, prevI, prevK, i, k
+The memory complexity is $O(n) ∈ n$. The function creates an array of size $n$. The rest of the variables are constant.
 
 
-n = make path array
-n-2 = randomize path array
-n^3 = for loop of n^3
-random chance = while loop for k > i
-n/2 = swap
-n-1 = calculate path
 
 ### Sources:
 
