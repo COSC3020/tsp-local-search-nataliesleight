@@ -51,24 +51,27 @@ What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
 
-Time complexity: n + (n-2) + (n^3) (random chance + (n/2) + (n-1))
-2n -2 + n^3(rand + n^2/2 - n/2)
-2n - 2 + n^3rand + n^5/2 - n^4/2
-n^5/2 - n^4/2 + n^3rand + 2n - 2
+### Time Complexity:
 
-The time complexity is $T(n) ∈ (\frac{n^5}{2}$. My analysis will also include the reasonings behind parts of my program. 
+The time complexity is $T(n) ∈ \frac{n^5}{2}$ or $T(n) ∈ (\frac{n^5}{2} + n^3r$ where $r$ represents the randomness factor. My analysis will also include the reasonings behind parts of my program. 
 
 The main function starts off by building an array of the nodes in the graph. This takes n time. It then calls on a function that randomizes the order of the array which takes n - 2 time (for loop runs from 0 to n-2). 
 
 After that a for loop is entered. This for loop runs n^3 times. This is an arbitrary value that I have selected and will be how many times there is a random path swap. I chose n^3 out of its ease of calculation and to give enough possible swaps to find the shortest path of that size. I initially considered n! to match the number of possible permutations but did not want to add extra complexity to calculate it. For smaller values of n, n^3 is greater than or a bit less than n! so I found it an appropriate value to use for this function. I first tried n^2 but it often was not able to find the shortest path.
 
-Within that for loop are a couple while loops. These while loops depend on chance so it is difficult to put a time complexity on it. These while loops choose the values for $i$ and $k$. The outer while loop condition is that i and k are both not equal to their previous iterations (made null to start). It then randomly generates a value for $i$ from 0 to $n-1$ (as $i$ will never be the last value because it is the left part of the segment to be swapped). Then in the inner while loop a value for $k$ is generated from 1 to $n$ (as $k$ will never be the first value because it is the right part of the segment to be swapped). The condition for this while loop is that $k$ is less than or equal to $i$, only exiting when $k$ is larger than $i$. Thus these while loops generate values $i$ and $k$ such that $i$ is less than $k$ and that $i$ and $k$ are not the same as their previous iteration. 
+Within that for loop are a couple while loops. These while loops depend on chance so it is difficult to put a time complexity on it, so I will deem it as $r$. These while loops choose the values for $i$ and $k$. The outer while loop condition is that i and k are both not equal to their previous iterations (made null to start). It then randomly generates a value for $i$ from 0 to $n-1$ (as $i$ will never be the last value because it is the left part of the segment to be swapped). Then in the inner while loop a value for $k$ is generated from 1 to $n$ (as $k$ will never be the first value because it is the right part of the segment to be swapped). The condition for this while loop is that $k$ is less than or equal to $i$, only exiting when $k$ is larger than $i$. Thus these while loops generate values $i$ and $k$ such that $i$ is less than $k$ and that $i$ and $k$ are not the same as their previous iteration. 
 
 After $i$ and $k$ are generated, a swap function is called to swap the selected portion. This has a maximum time complexity of n/2, as my swap function divides the segment in half and swaps the values iteratievly. 
 
 After the segment is swapped, a function the calculate the new path distance is called. This runs a for loop from 0 to n-2 and thus has a time complexity of n-2.
 
-Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-in for random chance, is $
+Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-in for random chance, is $n + (n - 2) + n^3(r + n/2 + (n-2))$ which simplifies down to $\frac{n^5}{2} - \frac{n^4}{2} + n^3r + 2n -1$. Thus for complexity $T(n) ∈ \frac{n^5}{2}$ or $T(n) ∈ (\frac{n^5}{2} + n^3r$.
+
+### Memory Complexity 
+
+n for array
+constant vars: shortPath, n, itNum, prevI, prevK, i, k
+
 
 n = make path array
 n-2 = randomize path array
