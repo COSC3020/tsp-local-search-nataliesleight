@@ -10,12 +10,22 @@ function tsp_ls(distance_matrix) {
 
     const itNum = n**3;                     // number of nodes cubed is how many iterations will be tried
 
+    
+    var prevI = null;
+    var prevK = null;
+
     for (var v = 0; v < itNum; v++) {  
-        var i = Math.floor(Math.random() * (n-1));  // random number between 0 and n-2
-        var k = -1;
-        while (k <= i) {                                // to make sure k is larger than i
-            k = Math.floor(Math.random() * (n-1)) + 1;  // random number between 1 and n-1
+        var i = null;                                          
+        var k = null;
+        while (i == prevI && k == prevK) {                     // prevent consecutive duplicate swap (unswap)
+            i = Math.floor(Math.random() * (n-1));             // random number between 0 and n-2
+            while (k <= i) {                                   // to make sure k is larger than i
+                k = Math.floor(Math.random() * (n-1)) + 1;              // random number between 1 and n-1
+            }
         }
+
+        prevI = i;
+        prevK = k;
         swap(pathArr,i,k);                                         // make the swap from i to k
         var newLength = calcLength(pathArr,distance_matrix);       // find length of that path
         if (newLength < shortPath) {                               // if new length shorter
