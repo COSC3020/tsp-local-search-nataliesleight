@@ -53,7 +53,7 @@ reasoning, to this markdown file.
 
 ### Time Complexity:
 
-The time complexity is $T(n) ∈ \frac{n^5}{2}$ or $T(n) ∈ (\frac{n^5}{2} + n^3r)$ where $r$ represents the randomness factor. My analysis will also include the reasonings behind parts of my program. 
+The time complexity is $T(n) ∈ \Theta(\frac{n^5}{2})$ or $T(n) ∈ \Theta(\frac{n^5}{2} + n^3r)$ where $r$ represents the randomness factor. My analysis will also include the reasonings behind parts of my program. 
 
 The main function starts off by building an array of the nodes in the graph. This takes n time. It then calls on a function that randomizes the order of the array which takes n - 2 time (for loop runs from 0 to n-2). 
 
@@ -65,11 +65,11 @@ After $i$ and $k$ are generated, a swap function is called to swap the selected 
 
 After the segment is swapped, a function the calculate the new path distance is called. This runs a for loop from 0 to n-2 and thus has a time complexity of n-2.
 
-Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-in for random chance, is $n + (n - 2) + n^3(r + n/2 + (n-2))$ which simplifies down to $\frac{n^5}{2} - \frac{n^4}{2} + n^3r + 2n -1$. Thus for complexity $T(n) ∈ \frac{n^5}{2}$ or $T(n) ∈ (\frac{n^5}{2} + n^3r$.
+Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-in for random chance, is $n + (n - 2) + n^3(r + n/2 + (n-2))$ which simplifies down to $\frac{n^5}{2} - \frac{n^4}{2} + n^3r + 2n -1$. Thus for complexity $T(n) ∈ \Theta(\frac{n^5}{2}$) or $T(n) ∈ \Theta(\frac{n^5}{2} + n^3r)$.
 
 ### Memory Complexity 
 
-The memory complexity is $O(n) ∈ n$. The function creates an array of size $n$. The rest of the variables are constant.
+The memory complexity is $T(n) ∈ O(n)$. The function creates an array of size $n$. The rest of the variables are constant.
 
 
 
