@@ -66,7 +66,7 @@ After $i$ and $k$ are generated, a swap function is called to swap the selected 
 
 After the segment is swapped, a function the calculate the new path distance is called. This runs a for loop from 0 to n-2 and thus has a time complexity of n-2.
 
-Altogether, the function, with $n$ as the number of nodes and $r$ being a stand-in for random chance, is $n + (n - 2) + n^3(n/2 + (n-2))$ which simplifies down to $\frac{3n^4}{4} - 2n^3 + 2n - 2$. Thus for complexity $T(n) ∈ \Theta(\frac{3n^4}{4})$.
+Altogether, the function, with $n$ as the number of nodes, is $n + (n - 2) + n^3(n/2 + (n-2))$ which simplifies down to $\frac{3n^4}{4} - 2n^3 + 2n - 2$. Thus for complexity $T(n) ∈ \Theta(\frac{3n^4}{4})$.
 
 ### Memory Complexity 
 
