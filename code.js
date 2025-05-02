@@ -13,15 +13,15 @@ function tsp_ls(distance_matrix) {
     
     var prevI = null;
     var prevK = null;
+    var i = null; 
+    var k = null;
 
     for (var v = 0; v < itNum; v++) {  
-        var i = null;                                          
-        var k = null;
-        while (i == prevI && k == prevK) {                     // prevent consecutive duplicate swap (unswap)
-            i = Math.floor(Math.random() * (n-1));             // random number between 0 and n-2
-            while (k <= i) {                                   // to make sure k is larger than i
-                k = Math.floor(Math.random() * (n-1)) + 1;              // random number between 1 and n-1
-            }
+        i = Math.floor(Math.random() * (n-1));
+        k = Math.floor(Math.random() * (n-i-1)) + i+1;
+        while (i == prevI && k == prevK) {
+            i = Math.floor(Math.random() * (n-1));                  // number between 1 and n-2 (not upper inclusive)
+            k = Math.floor(Math.random() * (n-i-1)) + i+1;          // random number 1 and n-1
         }
 
         prevI = i;
