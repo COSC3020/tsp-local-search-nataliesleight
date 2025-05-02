@@ -53,7 +53,7 @@ reasoning, to this markdown file.
 
 ### Time Complexity:
 
-The time complexity is $T(n) ∈ \Theta(\frac{n^5}{2})$. My analysis will also include the reasonings behind parts of my program. 
+The time complexity is $T(n) ∈ \Theta(\frac{3n^4}{4})$. My analysis will also include the reasonings behind parts of my program. 
 
 The main function starts off by building an array of the nodes in the graph. This takes n time. It then calls on a function that randomizes the order of the array which takes n - 2 time (for loop runs from 0 to n-2). 
 
